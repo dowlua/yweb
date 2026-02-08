@@ -3,11 +3,9 @@ import heartMarker from "../../../assets/heart-marker.svg";
 import weddingData from "../../../data/weddingData";
 
 export default function KakaoMap() {
-  // 1) 먼저 weddingData에서 location 꺼내고
   const { location } = weddingData;
 
-  // 2) 그 다음에 la, lo를 구조분해
-  const { la, lo } = location; // 👉 이제 여기 la, lo가 weddingData.location에서 옴
+  const { la, lo } = location;
 
   const mapRef = useRef(null);
 
@@ -18,7 +16,7 @@ export default function KakaoMap() {
 
       // 지도 옵션
       const options = {
-        center: new kakao.maps.LatLng(lo, la), // 여기서 la, lo 사용
+        center: new kakao.maps.LatLng(lo, la),
         level: 3,
       };
 
