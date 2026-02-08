@@ -1,19 +1,17 @@
+import ReactDOM from "react-dom";
 import ContactCard from "./common/ContactCard";
 
 export default function ContactModal({ isOpen, onClose, contacts }) {
-  if (!isOpen) return null; // 안 열려있으면 아무것도 렌더 X
+  if (!isOpen) return null;
 
   const handleClose = (e) => {
-    e.stopPropagation(); // 혹시라도 부모로 클릭 이벤트 안 올라가게
-    onClose(); // 부모에서 내려준 닫기 함수 호출
+    e.stopPropagation();
+    onClose?.();
   };
 
-  return (
+  return ReactDOM.createPortal(
     <div className="modal-backdrop" onClick={onClose}>
-      <div
-        className="modal-wrapper"
-        onClick={(e) => e.stopPropagation()} // 안쪽 클릭 시 닫힘 방지
-      >
+      <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
         <div className="modal">
           <div className="contact-list">
             <div className="contact-title">
@@ -23,7 +21,6 @@ export default function ContactModal({ isOpen, onClose, contacts }) {
                 <p className="en">Groom</p>
               </div>
             </div>
-
             <div className="contact-section">
               <ContactCard
                 label="신랑 어머니"
@@ -37,6 +34,7 @@ export default function ContactModal({ isOpen, onClose, contacts }) {
               />
             </div>
           </div>
+
           <div className="contact-list">
             <div className="contact-title">
               <p className="emoji">👰🏻‍♀️</p>
@@ -45,7 +43,6 @@ export default function ContactModal({ isOpen, onClose, contacts }) {
                 <p className="en">Bride</p>
               </div>
             </div>
-
             <div className="contact-section">
               <ContactCard
                 label="신부 어머니"
@@ -60,6 +57,7 @@ export default function ContactModal({ isOpen, onClose, contacts }) {
             </div>
           </div>
         </div>
+
         <button
           type="button"
           className="modal-floating-close circle"
@@ -68,6 +66,7 @@ export default function ContactModal({ isOpen, onClose, contacts }) {
           ×
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

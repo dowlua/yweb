@@ -1,14 +1,14 @@
-// AttendanceModal.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwSVZtb8qBsX1d9N-IlpzEVaEwn0b8u2fxJVtIRnsFcwMTwDeNcxOuD_WTXWdNXACH6gw/exec";
 
 export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
-  const [side, setSide] = useState("신랑"); // 어느 측
-  const [attend, setAttend] = useState("참석"); // 참석 여부
-  const [name, setName] = useState(""); // 이름
-  const [isSubmitting, setIsSubmitting] = useState(false); // 로딩 여부
+  const [side, setSide] = useState("신랑");
+  const [attend, setAttend] = useState("참석");
+  const [name, setName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
@@ -21,44 +21,29 @@ export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
 
   const handleClose = () => {
     resetForm();
-    onClose();
+    onClose?.();
   };
 
   const handleSubmit = (e) => {
-    // 간단한 유효성 검사
     if (!name.trim()) {
       e.preventDefault();
       alert("성함을 입력해 주세요.");
       return;
     }
-
-    // 유효하면 실제로 폼 전송은 그대로 진행되고,
-    // UI만 로딩 상태로 변경
     setIsSubmitting(true);
   };
 
   const handleIframeLoad = () => {
-    // 컴포넌트 처음 렌더링될 때 한 번 onLoad가 불려서
-    // "제출 중이 아닐 때"는 무시해줘야 함
     if (!isSubmitting) return;
-
-    // 여기까지 왔으면 폼 전송 완료로 판단
-    if (onSuccess) {
-      onSuccess(); // 부모에서 토스트 띄우기
-    }
-
-    // 폼 리셋 + 모달 닫기
+    onSuccess?.();
     handleClose();
   };
 
-  return (
+  // body에 portal로 모달 렌더링
+  return ReactDOM.createPortal(
     <div className="modal-backdrop" onClick={handleClose}>
-      <div
-        className="modal-wrapper"
-        onClick={(e) => e.stopPropagation()} // 안쪽 클릭 시 닫힘 방지
-      >
+      <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
-          {/* 로딩 오버레이 (사진 업로드 모달 느낌) */}
           {isSubmitting && (
             <div className="modal-loading">
               <p className="loading-icon">⏳</p>
@@ -68,7 +53,6 @@ export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
             </div>
           )}
 
-          {/* 응답 받는 iframe (항상 유지) */}
           <iframe
             name="hidden_rsvp_iframe"
             style={{ display: "none" }}
@@ -76,7 +60,6 @@ export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
             onLoad={handleIframeLoad}
           />
 
-          {/* 폼 (항상 DOM 안에 두되, 로딩 중엔 비활성화 느낌만 주면 됨) */}
           <form
             className={`modal-form ${isSubmitting ? "modal-form-disabled" : ""}`}
             action={SCRIPT_URL}
@@ -164,7 +147,6 @@ export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
               />
             </div>
 
-            {/* 실제로 서버로 넘어가는 값들 */}
             <input type="hidden" name="side" value={side} />
             <input type="hidden" name="attend" value={attend} />
             <input type="hidden" name="name" value={name} />
@@ -188,6 +170,7 @@ export default function AttendanceModal({ isOpen, onClose, onSuccess }) {
           ×
         </button>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
