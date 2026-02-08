@@ -64,11 +64,21 @@ export default function Gallery() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <img
-          src={images[currentIndex]}
-          alt={`웨딩 사진 ${currentIndex + 1}`}
-          className="gallery-main-image"
-        />
+        <div
+          className="gallery-slider"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {images.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`웨딩 사진 ${idx + 1}`}
+              className="gallery-main-image"
+            />
+          ))}
+        </div>
       </div>
       <div className="gallery-info">사진을 양옆으로 넘겨보세요 👉🏻</div>
 

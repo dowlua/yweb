@@ -1048,16 +1048,22 @@ img.letter-message {
 /* 큰 사진 영역 */
 .gallery-main {
   position: relative;
-  width: 100%;
   overflow: hidden;
   background: none;
 }
 
+.gallery-slider {
+  display: flex;
+  transition: transform 0.4s ease;
+  /* 여기가 부드럽게 움직이는 포인트 */
+  width: 100%;
+}
+
 .gallery-main-image {
   width: 100%;
-  height: 100%;
+  flex-shrink: 0;
+  /* 이미지가 줄어들지 않게 */
   object-fit: cover;
-  display: block;
 }
 
 .gallery-info {
