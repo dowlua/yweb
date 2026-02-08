@@ -115,7 +115,13 @@ export default function Map() {
 
         <div className="map-desc">
           <p className="title">셔틀버스</p>
-          <p className="desc">남위례역 5번출구 앞 15분 간격으로 운행</p>
+          <p className="desc">
+            남위례역 5번출구 ↔ 호텔
+            <br />
+            15분 간격으로 운행
+            <br />
+            (예식 1시간 전부터 예식 후 2시간까지)
+          </p>
         </div>
         <div className="map-desc">
           <p className="title">지하철</p>
