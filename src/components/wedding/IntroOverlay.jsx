@@ -34,7 +34,7 @@ export default function IntroOverlay({ onFinish }) {
           setStep(5);
           if (onFinish) onFinish();
         }, 500); // CSS 트랜지션 시간과 동일
-      }, 8000),
+      }, 9000),
     ];
 
     return () => {
