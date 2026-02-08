@@ -11,7 +11,7 @@ import MapSection from "../components/wedding/07-Map";
 import Account from "../components/wedding/08-Account";
 import GuestPhoto from "../components/wedding/09-GuestPhoto";
 import Ending from "../components/wedding/10-Ending";
-import Audiocomp from "../components/wedding/common/AudioComp";
+import Audiocomp from "../components/wedding/common/Audiocomp";
 import "../styles/global.css";
 
 export default function WeddingPage() {
