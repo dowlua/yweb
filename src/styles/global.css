@@ -1425,6 +1425,7 @@ section.guest-photo .intro-title {
   position: relative;
   overflow: hidden;
   padding: 90px 80px 40px 80px;
+  margin-top: -3px;
 }
 
 .ending-bg {

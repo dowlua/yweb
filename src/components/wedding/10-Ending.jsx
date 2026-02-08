@@ -23,8 +23,9 @@ export default function Ending() {
     window.Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "장연욱 🤍 박은빈 결혼합니다",
-        description: "소중한 날에 초대합니다 💍",
+        title: "장연욱 ♥ 박은빈 결혼합니다",
+        description:
+          "5월 23일 (토) 오후 5시\n밀리토피아 웨딩센터 2F 아이리스홀",
         imageUrl: "https://yweb-wedding.vercel.app/cover.jpg", // 썸네일용 이미지
         link: {
           mobileWebUrl: "https://yweb.enn.kr",
@@ -33,7 +34,7 @@ export default function Ending() {
       },
       buttons: [
         {
-          title: "청첩장 보러가기",
+          title: "청첩장 보러가기 💌",
           link: {
             mobileWebUrl: "https://yweb.enn.kr",
             webUrl: "https://yweb.enn.kr",
