@@ -25,7 +25,8 @@ export default function Ending() {
       content: {
         title: "장연욱 🤍 박은빈 결혼합니다",
         description: "소중한 날에 초대합니다 💍",
-        imageUrl: "https://너의_대표_이미지_URL.jpg", // 썸네일용 이미지
+        imageUrl:
+          "https://github.com/dowlua/yweb/blob/main/public/cover.jpg?raw=true", // 썸네일용 이미지
         link: {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,
