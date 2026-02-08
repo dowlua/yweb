@@ -318,8 +318,10 @@ section.cover {
 
 .cover-top {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   z-index: 2;
+  padding: 0 20px;
 }
 
 .cover-bottom {
@@ -337,8 +339,16 @@ section.cover {
   display: inline-block;
   font-family: var(--font-fa-en);
   font-size: 5rem;
-  line-height: 6rem;
+  line-height: 5.6rem;
   color: var(--color-pt-lt);
+}
+
+.cover-calligraphy.left {
+  text-align: left;
+}
+
+.cover-calligraphy.right {
+  text-align: right;
 }
 
 .cover-names {

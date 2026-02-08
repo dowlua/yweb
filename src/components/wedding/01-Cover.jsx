@@ -12,11 +12,8 @@ export default function Cover() {
     <section className="cover snap-page">
       <div className="cover-inner">
         <div className="cover-top">
-          <h1 className="cover-calligraphy">
-            Getting
-            <br />
-            Married
-          </h1>
+          <p className="cover-calligraphy left">Getting</p>
+          <p className="cover-calligraphy right">Married</p>
         </div>
 
         <div className="cover-bottom">
