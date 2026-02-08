@@ -266,8 +266,7 @@ button.circle {
 
 section.cover {
   position: relative;
-  height: 100vh;
-  /* section.page 에서 이미 있으니 사실 생략 가능 */
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,8 +353,6 @@ section.cover {
 /* ===== Intro ===== */
 
 section.intro {
-  min-height: 100vh;
-  height: 100vh;
   padding: 60px 0;
   background: #181818;
 }
@@ -420,22 +417,14 @@ section.intro {
   white-space: nowrap;
 }
 
-
-
 .intro-photo {
-  flex: 1 1 auto;
-  min-height: 0;
-  background: #343434;
-  background-image: url("../assets/intro-photo.jpg");
-  background-size: cover;
-  background-position: center;
   position: relative;
   overflow: hidden;
 }
 
 .intro-photo-img {
   width: 100%;
-  height: 100%;
+  height: 365px;
   object-fit: cover;
 }
 
@@ -450,7 +439,7 @@ section.intro {
 
 @media (height <=667px) {
   .speech-bubble {
-    height: 13%;
+    height: 9%;
   }
 }
 
