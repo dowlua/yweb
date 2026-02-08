@@ -27,18 +27,12 @@ export default function Ending() {
         description: "소중한 날에 초대합니다 💍",
         imageUrl:
           "https://github.com/dowlua/yweb/blob/main/public/cover.jpg?raw=true", // 썸네일용 이미지
-        link: {
-          mobileWebUrl: window.location.href,
-          webUrl: window.location.href,
-        },
+        link: "https://yweb-wedding.vercel.app/",
       },
       buttons: [
         {
           title: "청첩장 보러가기",
-          link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
-          },
+          link: "https://yweb-wedding.vercel.app/",
         },
       ],
     });
