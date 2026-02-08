@@ -35,7 +35,14 @@ export default function Attendance() {
             {location.name} {location.hallname}
           </p>
           <button type="button" onClick={() => setIsOpen(true)}>
-            <ArrowRightIcon size={30} />
+            <svg
+              className="triangle-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 17L4 7h16L12 17z" />
+            </svg>
             전달하기
           </button>
         </div>

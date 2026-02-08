@@ -41,7 +41,14 @@ export default function GuestPhoto() {
         className="guest-photo-btn"
         onClick={() => setIsModalOpen(true)}
       >
-        <ArrowRightIcon size={30} />
+        <svg
+          className="triangle-icon"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+        >
+          <path d="M12 17L4 7h16L12 17z" />
+        </svg>
         사진 올리기
       </button>
 
