@@ -124,6 +124,27 @@ button.circle {
 }
 
 
+/* ===== 공통 fade-in ===== */
+/* 섹션은 항상 배경 유지 */
+.fade-section {
+  position: relative;
+  padding: 0;
+}
+
+/* 컨텐츠만 fade-in */
+.fade-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-section.active .fade-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 /* ===== Toast ===== */
 
 .toast {
@@ -1435,7 +1456,7 @@ section.guest-photo .intro-title {
   position: relative;
   overflow: hidden;
   padding: 90px 80px 40px 80px;
-  margin-top: -3px;
+  margin-top: -10px;
 }
 
 .ending-bg {

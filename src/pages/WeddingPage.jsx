@@ -12,6 +12,7 @@ import Account from "../components/wedding/08-Account";
 import GuestPhoto from "../components/wedding/09-GuestPhoto";
 import Ending from "../components/wedding/10-Ending";
 import Audiocomp from "../components/wedding/common/Audiocomp";
+import FadeSection from "../components/wedding/common/FadeSection";
 import "../styles/global.css";
 
 export default function WeddingPage() {
@@ -30,12 +31,29 @@ export default function WeddingPage() {
       <Cover />
       <Intro />
       <Invitation />
-      <Calendar />
-      <Attendance />
+
+      <FadeSection bgColor="var(--color-pt-lt)">
+        <Calendar />
+      </FadeSection>
+
+      <FadeSection bgColor="var(--color-pt-bd)">
+        <Attendance />
+      </FadeSection>
+
       <Gallery />
-      <MapSection />
-      <Account />
-      <GuestPhoto />
+
+      <FadeSection bgColor="var(--color-white)">
+        <MapSection />
+      </FadeSection>
+
+      <FadeSection bgColor="var(--color-pt-lt)">
+        <Account />
+      </FadeSection>
+
+      <FadeSection>
+        <GuestPhoto />
+      </FadeSection>
+
       <Ending />
     </>
   );
