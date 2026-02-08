@@ -7,7 +7,9 @@ export default function Ending() {
   const handleCopyLink = () => {
     if (!navigator.clipboard) return;
 
-    navigator.clipboard.writeText(window.location.href).then(() => {
+    const linkToCopy = "https://yweb.enn.kr";
+
+    navigator.clipboard.writeText(linkToCopy).then(() => {
       setToastMsg("청첩장 링크가 복사되었습니다 🤍");
 
       setTimeout(() => setToastMsg(""), 2500);
