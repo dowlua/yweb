@@ -59,9 +59,9 @@ const weddingData = {
     name: "밀리토피아 웨딩센터",
     nameEn: "Militopiahotel Weddingcenter",
     hallname: "2F 아이리스홀",
-    address: "경기도 성남시 수정구 위례대로 83",
-    lo: "37.468218359860444",
-    la: "127.14384555909646",
+    address: "경기 성남시 수정구 창곡동 566",
+    lo: "37.467439605883314",
+    la: "127.14333538488124",
   },
 
   account: {

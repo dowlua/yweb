@@ -10,22 +10,18 @@ export default function Map() {
   const { location } = weddingData;
   const [toastMsg, setToastMsg] = useState("");
 
-  // 👇 위/경도 숫자로 변환 (공통으로 쓰자)
-  const lat = Number(location.lo); // 37.xxx → 위도(lat)
-  const lng = Number(location.la); // 127.xxx → 경도(lng)
+  const lat = Number(location.lo);
+  const lng = Number(location.la);
   const placeName = "밀리토피아호텔 바이마린 웨딩센터".trim();
 
-  // 📌 Kakao SDK 초기화 (한 번만)
   useEffect(() => {
     if (!window.Kakao) return;
 
     if (!window.Kakao.isInitialized()) {
       window.Kakao.init(import.meta.env.VITE_KAKAO_MAP_KEY);
-      // console.log("Kakao init 완료");
     }
   }, []);
 
-  // ✅ 카카오내비 - 목적지 공유
   const handleKakaoNavi = () => {
     if (!window.Kakao || !window.Kakao.Navi) return;
 
@@ -35,27 +31,24 @@ export default function Map() {
     }
 
     window.Kakao.Navi.share({
-      name: placeName || location.name, // 목적지 이름
-      x: lng, // 경도 (lon)
-      y: lat, // 위도 (lat)
+      name: placeName || location.name,
+      x: lng,
+      y: lat,
       coordType: "wgs84",
     });
   };
 
-  // ✅ T맵
   const handleTmap = () => {
-    // T맵 앱 스킴 (경도 = goalx, 위도 = goaly)
     const url = `tmap://route?goalx=${lng}&goaly=${lat}&goalname=${encodeURIComponent(
-      placeName
+      placeName,
     )}`;
 
     window.location.href = url;
   };
 
-  // ✅ 네이버지도
   const handleNaverMap = () => {
     const url = `nmap://route/public?dlat=${lat}&dlng=${lng}&dname=${encodeURIComponent(
-      placeName
+      placeName,
     )}&appname=${window.location.host}`;
     window.location.href = url;
   };

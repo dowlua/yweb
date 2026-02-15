@@ -27,7 +27,7 @@ const Intro = forwardRef(function Intro(_, ref) {
       },
       {
         threshold: 0.7, // 섹션의 70% 정도 보이면 "들어왔다"고 판단
-      }
+      },
     );
 
     observer.observe(el);
@@ -42,7 +42,7 @@ const Intro = forwardRef(function Intro(_, ref) {
       </div>
       <IntroPhoto active={active} />
       <div className="intro-info">
-        <p className="intro-info-name">Yeon Uk🤵🏻 🤍 ‍👰🏻‍♀Eun Bin</p>
+        <p className="intro-info-name">Yeon Uk🤵🏻 🤍 👰🏻‍♀️Eun Bin</p>
         <div className="intro-info-role">
           <p>
             {contacts.groom.mother} <span className="role-sm">의 장남</span>{" "}
