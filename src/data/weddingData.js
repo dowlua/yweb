@@ -66,7 +66,7 @@ const weddingData = {
 
   account: {
     groom: { bank: "기업은행", number: "427-111250-01-012" },
-    bride: { bank: "카카오뱅크", number: "3333-12-0797975" },
+    bride: { bank: "토스뱅크", number: "1002-2281-9657" },
   },
 };
 
