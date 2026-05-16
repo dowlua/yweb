@@ -50,10 +50,6 @@ export default function WeddingPage() {
         <Account />
       </FadeSection>
 
-      <FadeSection>
-        <GuestPhoto />
-      </FadeSection>
-
       <Ending />
     </>
   );

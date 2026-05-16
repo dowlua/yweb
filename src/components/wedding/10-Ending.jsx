@@ -54,7 +54,7 @@ export default function Ending() {
         viewBox="0 0 375 200"
         preserveAspectRatio="none"
       >
-        <path d="M0,200 Q187.5,0 375,200 L375,0 L0,0 Z" fill="#181818" />
+        <path d="M0,200 Q187.5,0 375,200 L375,0 L0,0 Z" fill="#F2F6DB" />
       </svg>
 
       <div className="ending-content">
